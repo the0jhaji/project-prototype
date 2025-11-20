@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Well Core — Your Personal Mental Health Space</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="nav-wrap">
+      <nav class="nav container">
+        <a class="brand" href="#">Well Core</a>
+        <ul class="nav-links">
+          <li><a href="#assistant">AI Assistant</a></li>
+          <li><a href="#mood">Mood Tracker</a></li>
+          <li><a href="#quiz">Self-Assessment Quiz</a></li>
+          <li><a href="#relaxation">Relaxation Tools</a></li>
+          <li><a href="#counsel">Counselling</a></li>
+          <li><a href="resources.html">Resources</a></li>
+        </ul>
+        <button class="menu-btn" aria-label="menu">☰</button>
+      </nav>
+    </header> 
+
+    <main class="container">
+      <section class="hero">
+        <h1>Your Personal Mental Health Space</h1>
+        <p class="lead">Welcome to Well core , a safe space where healing, growth, and understanding come together. We are dedicated to providing compassionate and evidence-based psychological care tailored to support your emotional and mental well-being..</p>
+        <div class="hero-links">
+          <a class="btn" href="#assistant">AI Assistant</a>
+          <a class="btn" href="#mood">Mood Tracker</a>
+          <a class="btn" href="#quiz">Self-Assessment Quiz</a>
+          <a class="btn" href="#relaxation">Relaxation Tools</a>
+          <a class="btn" href="resources.html">Resources</a>
+        </div>
+      </section>
+
+      <section id="assistant" class="card section">
+        <h2>AI Mental Health Assistant</h2>
+        <div class="chat-wrap">
+          <div id="chatLog" class="chat-log" aria-live="polite"></div>
+          <form id="chatForm" class="chat-form">
+            <input id="chatInput" placeholder="Talk to Well Core (e.g. I'm feeling anxious)" autocomplete="off" />
+            <button type="submit">Send</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="mood" class="card section">
+        <h2>Mood Tracker</h2>
+        <p>Select your current mood — saved locally to your browser.</p>
+        <div class="mood-buttons">
+          <button class="mood-btn" data-mood="very_happy">😊</button>
+          <button class="mood-btn" data-mood="happy">🙂</button>
+          <button class="mood-btn" data-mood="neutral">😐</button>
+          <button class="mood-btn" data-mood="sad">☹️</button>
+          <button class="mood-btn" data-mood="very_sad">😢</button>
+        </div>
+        <div class="mood-controls" style="margin-top:10px;display:flex;gap:8px;align-items:center">
+          <button id="exportMood" class="small-btn">Export CSV</button>
+          <button id="clearMood" class="small-btn">Clear Data</button>
+          <div style="margin-left:auto;color:var(--muted);font-size:0.9rem" id="lastSaved">No entries yet</div>
+        </div>
+        <div class="mood-graph" id="moodGraph"></div>
+        <div id="moodList" class="mood-list"></div>
+        <small class="muted">Your moods are stored only in this browser's localStorage.</small>
+      </section>
+
+      <section id="quiz" class="card section">
+        <h2>Self-Assessment Quiz</h2>
+        <div id="quizContainer"></div>
+      </section>
+
+      <section id="relaxation" class="card section">
+        <h2>Relaxation Tools</h2>
+        <div class="relax-grid">
+          <div class="relax-card">
+            <h3>Breathing Exercise</h3>
+            <div class="breath-area">
+              <div id="breathCircle" class="breath-circle"></div>
+              <div id="breathText" class="breath-text">Ready to breathe</div>
+              <div class="breath-controls">
+                <button id="startBreath">Start</button>
+                <button id="stopBreath">Stop</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="relax-card">
+            <h3>Calm Music</h3>
+            <div class="player">
+              <audio id="audioPlayer" controls preload="none">
+                <source id="audioSource" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+              <div class="player-controls">
+                <button id="track1">Track 1</button>
+                <button id="track2">Track 2</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="relax-card">
+            <h3>Random Quote</h3>
+            <blockquote id="quoteBox" class="quote">"Small breaths, small steps."</blockquote>
+            <button id="newQuote">New Quote</button>
+          </div>
+
+          <div class="relax-card">
+            <h3>Study Break Timer (25 min)</h3>
+            <div class="timer">
+              <div id="timerDisplay">25:00</div>
+              <div class="timer-controls">
+                <button id="startTimer">Start</button>
+                <button id="pauseTimer">Pause</button>
+                <button id="resetTimer">Reset</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="counsel" class="card section">
+        <h2>Counselling & Consult Doctor</h2>
+        <p>If you'd like to speak with a counsellor or request a consultation, use the form below. Well Core is not a medical provider — for emergencies contact local services immediately.</p>
+        <form id="consultForm" class="consult-form">
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <input name="name" placeholder="Your name" required style="flex:1;padding:8px;border-radius:8px;border:1px solid rgba(0,0,0,0.06)" />
+            <input name="email" placeholder="Email (optional)" type="email" style="flex:1;padding:8px;border-radius:8px;border:1px solid rgba(0,0,0,0.06)" />
+          </div>
+          <textarea name="reason" placeholder="Brief reason or notes" required style="width:100%;margin-top:8px;padding:8px;border-radius:8px;border:1px solid rgba(0,0,0,0.06)"></textarea>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <select name="preferred" style="padding:8px;border-radius:8px;border:1px solid rgba(0,0,0,0.06)">
+              <option value="email">Email</option>
+              <option value="phone">Phone</option>
+              <option value="inperson">In-person</option>
+            </select>
+            <button type="submit" class="small-btn">Request Consult</button>
+            <a class="btn" href="https://www.who.int/" target="_blank" rel="noopener">Find Local Services</a>
+          </div>
+        </form>
+        <div id="consultMessage" style="margin-top:8px;color:var(--muted)"></div>
+      </section>
+      <section class="videos">
+        <h2>Videos that will help you</h2>
+        <div class="video-container">
+            <iframe width="260" height="215" src="https://www.youtube.com/embed/U9YKY7fdwyg?si=Nd9PSXBJQ0WNm4Vc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            <!-- 2nd video -->
+            <iframe width="260" height="215" src="https://www.youtube.com/embed/Gn5NaUnScHk?si=2i5jo9dkQLjpovKc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            <iframe width="260" height="215" src="https://www.youtube.com/embed/eGVWRvNe1-A?si=OJH_UyoHvSyQuohy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            <iframe width="260" height="215" src="https://www.youtube.com/embed/CqgmozFr_GM?si=Q0JDg3A1XqFb5zPJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            <iframe width="260" height="215" src="https://www.youtube.com/embed/n_5ZryVx6Sk?si=-A6YKQOGcI0cCZmK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
+
+
+            <iframe width="260" height="215" src="https://www.youtube.com/embed/hl16xyq-Y34?si=8y61-IgOOsGGRk9F" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">Well Core — small tools to help you feel steadier. Not a substitute for professional care.<br>
+      Developed by Team Idea Ignition</div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="chatbot.js"></script>
+    <script src="mood.js"></script>
+    <script src="quiz.js"></script>
+    <script src="relaxation.js"></script>
+
+    <!-- Login and admin UI removed per request -->
+
+    <!-- Toasts -->
+    <div id="toast" class="toast hidden"></div>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Well Core — Consultation</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="nav-wrap">
+      <nav class="nav container">
+        <a class="brand" href="index.html">Well Core</a>
+        <ul class="nav-links">
+          <li><a href="index.html#assistant">AI Assistant</a></li>
+          <li><a href="index.html#mood">Mood Tracker</a></li>
+          <li><a href="index.html#quiz">Self-Assessment Quiz</a></li>
+          <li><a href="index.html#relaxation">Relaxation Tools</a></li>
+          <li><a href="index.html#counsel">Counselling</a></li>
+          <li><a href="resources.html">Resources</a></li>
+        </ul>
+        <button class="menu-btn" aria-label="menu">☰</button>
+      </nav>
+    </header>
+
+    <main class="container" style="max-width:820px;margin:24px auto">
+      <section class="card section">
+        <h2>Counselling & Consult Doctor</h2>
+        <p>If you'd like to speak with a counsellor or request a consultation, use the form below. Well Core is not a medical provider — for emergencies contact local services immediately.</p>
+        <form id="consultForm" class="consult-form">
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <input name="name" placeholder="Your name" required style="flex:1;padding:8px;border-radius:8px;border:1px solid rgba(0,0,0,0.06)" />
+            <input name="email" placeholder="Email (optional)" type="email" style="flex:1;padding:8px;border-radius:8px;border:1px solid rgba(0,0,0,0.06)" />
+          </div>
+          <textarea name="reason" placeholder="Brief reason or notes" required style="width:100%;margin-top:8px;padding:8px;border-radius:8px;border:1px solid rgba(0,0,0,0.06)"></textarea>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <select name="preferred" style="padding:8px;border-radius:8px;border:1px solid rgba(0,0,0,0.06)">
+              <option value="email">Email</option>
+              <option value="phone">Phone</option>
+              <option value="inperson">In-person</option>
+            </select>
+            <button type="submit" class="small-btn">Request Consult</button>
+            <a class="btn" href="https://www.who.int/" target="_blank" rel="noopener">Find Local Services</a>
+          </div>
+        </form>
+        <div id="consultMessage" style="margin-top:8px;color:var(--muted)"></div>
+      </section>
+
+      <section style="margin-top:18px;text-align:center">
+        <a class="btn" href="index.html">Back to Well Core Home</a>
+        <a class="btn" href="resources.html">Resources</a>
+      </section>
+      
+    </main>
+
+    <footer class="footer">
+      <div class="container">Well Core — small tools to help you feel steadier. Not a substitute for professional care.</div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <!-- Login and admin UI removed per request -->
+
+    <!-- Toasts -->
+    <div id="toast" class="toast hidden"></div>
+  </body>
+</html>
