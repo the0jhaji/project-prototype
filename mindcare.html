@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional mental health consultation service. Book your appointment with our certified counselors.">
+    <title>Well core - Mental Health Consultation Service</title>
+    <link rel="stylesheet" href="mindcare.css">
+</head>
+<body>
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>🧠 Well core</h1>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="#doctors" class="nav-link">Our Team</a></li>
+                <li><a href="#booking" class="nav-link">Book Now</a></li>
+                <li><a href="#resources" class="nav-link">Resources</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li>
+                    <button id="darkModeToggle" class="mode-toggle" aria-label="Toggle dark mode">
+                        🌙 Dark Mode
+                    </button>
+                </li>
+                <li>
+                    <button id="menuBtn" class="menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+                        ☰
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Emergency Support Banner -->
+    <div class="emergency-banner" role="alert" aria-live="polite">
+        <div class="emergency-content">
+            <h3>🆘 Need Immediate Support?</h3>
+            <p>Crisis Helpline: <strong>1-800-Well core</strong> (Available 24/7) | Text SUPPORT to 741741</p>
+        </div>
+    </div>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="hero" role="region" aria-label="Welcome section">
+            <div class="hero-content">
+                <h2 class="hero-title">Your Mental Health Matters</h2>
+                <p class="hero-subtitle">Expert counseling and support tailored to your needs. Start your journey to wellness today.</p>
+                <a href="#booking" class="cta-button">Book a Consultation</a>
+            </div>
+            <div class="hero-background"></div>
+        </section>
+
+        <!-- Doctor Profiles Section -->
+        <section id="doctors" class="doctors-section" role="region" aria-label="Doctor profiles">
+            <div class="section-container">
+                <h2 class="section-title">Meet Our Team</h2>
+                <p class="section-subtitle">Our certified mental health professionals are here to help</p>
+                
+                <div class="doctors-grid" role="list">
+                    <!-- Doctor 1 -->
+                    <article class="doctor-card" role="listitem">
+                        <div class="doctor-image">
+                            <div class="placeholder-image">Dr. Sarah</div>
+                        </div>
+                        <h3>Dr. Sarah Johnson</h3>
+                        <p class="specialization">Clinical Psychologist</p>
+                        <p class="specialization-detail">Anxiety & Depression</p>
+                        <div class="availability">
+                            <strong>Availability:</strong>
+                            <p>Mon-Wed: 9AM-5PM</p>
+                            <p>Thu-Fri: 10AM-6PM</p>
+                        </div>
+                        <button class="book-btn" onclick="scrollToBooking('Dr. Sarah Johnson')">Book Now</button>
+                    </article>
+
+                    <!-- Doctor 2 -->
+                    <article class="doctor-card" role="listitem">
+                        <div class="doctor-image">
+                            <div class="placeholder-image">Dr. Michael</div>
+                        </div>
+                        <h3>Dr. Michael Chen</h3>
+                        <p class="specialization">Licensed Counselor</p>
+                        <p class="specialization-detail">Stress Management & Wellness</p>
+                        <div class="availability">
+                            <strong>Availability:</strong>
+                            <p>Tue-Thu: 1PM-7PM</p>
+                            <p>Sat: 10AM-2PM</p>
+                        </div>
+                        <button class="book-btn" onclick="scrollToBooking('Dr. Michael Chen')">Book Now</button>
+                    </article>
+
+                    <!-- Doctor 3 -->
+                    <article class="doctor-card" role="listitem">
+                        <div class="doctor-image">
+                            <div class="placeholder-image">Dr. Emily</div>
+                        </div>
+                        <h3>Dr. Emily Rodriguez</h3>
+                        <p class="specialization">Family Therapist</p>
+                        <p class="specialization-detail">Relationship & Life Transitions</p>
+                        <div class="availability">
+                            <strong>Availability:</strong>
+                            <p>Mon-Fri: 2PM-8PM</p>
+                            <p>Sun: 11AM-3PM</p>
+                        </div>
+                        <button class="book-btn" onclick="scrollToBooking('Dr. Emily Rodriguez')">Book Now</button>
+                    </article>
+
+                    <!-- Doctor 4 -->
+                    <article class="doctor-card" role="listitem">
+                        <div class="doctor-image">
+                            <div class="placeholder-image">Dr. James</div>
+                        </div>
+                        <h3>Dr. James Park</h3>
+                        <p class="specialization">Cognitive Behavioral Therapist</p>
+                        <p class="specialization-detail">OCD & Behavioral Issues</p>
+                        <div class="availability">
+                            <strong>Availability:</strong>
+                            <p>Wed-Fri: 8AM-4PM</p>
+                            <p>Sat-Sun: 9AM-1PM</p>
+                        </div>
+                        <button class="book-btn" onclick="scrollToBooking('Dr. James Park')">Book Now</button>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Appointment Booking Section -->
+        <section id="booking" class="booking-section" role="region" aria-label="Appointment booking">
+            <div class="section-container">
+                <h2 class="section-title">Book Your Consultation</h2>
+                <p class="section-subtitle">Choose your preferred doctor and time slot</p>
+                
+                <form id="bookingForm" class="booking-form" aria-label="Consultation booking form">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required placeholder="Enter your full name" aria-required="true">
+                        <span class="error-message" id="nameError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required placeholder="your@email.com" aria-required="true">
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="age">Age *</label>
+                        <input type="number" id="age" name="age" required min="1" max="120" placeholder="Enter your age" aria-required="true">
+                        <span class="error-message" id="ageError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="doctor">Select Doctor *</label>
+                        <select id="doctor" name="doctor" required aria-required="true">
+                            <option value="">Choose a doctor...</option>
+                            <option value="Dr. Sarah Johnson">Dr. Sarah Johnson - Clinical Psychologist</option>
+                            <option value="Dr. Michael Chen">Dr. Michael Chen - Licensed Counselor</option>
+                            <option value="Dr. Emily Rodriguez">Dr. Emily Rodriguez - Family Therapist</option>
+                            <option value="Dr. James Park">Dr. James Park - Cognitive Behavioral Therapist</option>
+                        </select>
+                        <span class="error-message" id="doctorError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="consultationType">Consultation Type *</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="consultationType" value="video" required> Video Call
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="consultationType" value="in-person"> In-Person
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="consultationType" value="chat"> Chat
+                            </label>
+                        </div>
+                        <span class="error-message" id="consultationTypeError"></span>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="date">Preferred Date *</label>
+                            <input type="date" id="date" name="date" required aria-required="true">
+                            <span class="error-message" id="dateError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="time">Preferred Time *</label>
+                            <input type="time" id="time" name="time" required aria-required="true">
+                            <span class="error-message" id="timeError"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="concern">Main Concern or Reason for Visit</label>
+                        <textarea id="concern" name="concern" rows="4" placeholder="Brief description of what brings you here..." aria-describedby="concernHint"></textarea>
+                        <span id="concernHint" class="hint">This helps us better prepare for your session</span>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Confirm Booking</button>
+                    <p class="form-note">* Indicates required fields</p>
+                </form>
+            </div>
+        </section>
+
+        <!-- Resources Section -->
+        <section id="resources" class="resources-section" role="region" aria-label="Mental health resources">
+            <div class="section-container">
+                <h2 class="section-title">Mental Health Resources</h2>
+                
+                <!-- Articles Tab -->
+                <div class="resources-tabs">
+                    <button class="tab-button active" onclick="switchTab(event, 'articles')" aria-selected="true">Articles</button>
+                    <button class="tab-button" onclick="switchTab(event, 'faqs')" aria-selected="false">FAQs</button>
+                    <button class="tab-button" onclick="switchTab(event, 'selfcare')" aria-selected="false">Self-Care Tips</button>
+                </div>
+
+                <!-- Articles Content -->
+                <div id="articles" class="tab-content active" role="tabpanel">
+                    <div class="resources-grid">
+                        <article class="resource-card">
+                            <h3>Understanding Anxiety Disorders</h3>
+                            <p>Learn about the different types of anxiety disorders and how cognitive behavioral therapy can help manage symptoms effectively.</p>
+                            <a href="#" class="read-more">Read More →</a>
+                        </article>
+                        <article class="resource-card">
+                            <h3>The Science of Sleep and Mental Health</h3>
+                            <p>Discover the crucial link between sleep quality and mental wellness, plus practical tips for improving your sleep hygiene.</p>
+                            <a href="#" class="read-more">Read More →</a>
+                        </article>
+                        <article class="resource-card">
+                            <h3>Building Resilience in Daily Life</h3>
+                            <p>Explore evidence-based techniques to develop emotional resilience and bounce back from life's challenges.</p>
+                            <a href="#" class="read-more">Read More →</a>
+                        </article>
+                        <article class="resource-card">
+                            <h3>Mindfulness and Meditation 101</h3>
+                            <p>A beginner's guide to mindfulness practices and meditation techniques that can reduce stress and improve focus.</p>
+                            <a href="#" class="read-more">Read More →</a>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- FAQs Content -->
+                <div id="faqs" class="tab-content" role="tabpanel">
+                    <div class="faq-container">
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                How do I know if I need therapy?
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>If you're experiencing persistent feelings of sadness, anxiety, or if personal issues are affecting your daily life, therapy can help. Our doctors can discuss whether counseling is right for you.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                What are the benefits of video consultations?
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Video consultations offer convenience, flexibility, and privacy. You can attend from your comfortable home environment while receiving the same quality care as in-person sessions.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                Is everything I share confidential?
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Yes. All consultations are confidential and comply with HIPAA regulations. Your privacy and information security are our top priorities.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                Can I reschedule or cancel my appointment?
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Yes, you can reschedule or cancel up to 24 hours before your appointment. Please contact us as soon as possible if you need to make changes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Self-Care Tips Content -->
+                <div id="selfcare" class="tab-content" role="tabpanel">
+                    <div class="selfcare-grid">
+                        <div class="selfcare-card">
+                            <div class="selfcare-icon">🧘</div>
+                            <h3>Practice Daily Meditation</h3>
+                            <p>Start with just 5-10 minutes each day to calm your mind and reduce anxiety.</p>
+                        </div>
+                        <div class="selfcare-card">
+                            <div class="selfcare-icon">🚶</div>
+                            <h3>Take Regular Walks</h3>
+                            <p>Physical activity boosts mood and provides clarity. Aim for 30 minutes daily.</p>
+                        </div>
+                        <div class="selfcare-card">
+                            <div class="selfcare-icon">🍎</div>
+                            <h3>Nourish Your Body</h3>
+                            <p>Eat balanced meals with plenty of fruits, vegetables, and water for mental wellness.</p>
+                        </div>
+                        <div class="selfcare-card">
+                            <div class="selfcare-icon">😴</div>
+                            <h3>Prioritize Sleep</h3>
+                            <p>Aim for 7-9 hours of quality sleep each night to support mental health.</p>
+                        </div>
+                        <div class="selfcare-card">
+                            <div class="selfcare-icon">📱</div>
+                            <h3>Digital Detox</h3>
+                            <p>Take regular breaks from screens to reduce stress and improve focus.</p>
+                        </div>
+                        <div class="selfcare-card">
+                            <div class="selfcare-icon">❤️</div>
+                            <h3>Connect with Others</h3>
+                            <p>Spend quality time with friends and family who support your well-being.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>About Well core</h4>
+                <p>Providing compassionate, professional mental health services to help you thrive.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#doctors">Our Team</a></li>
+                    <li><a href="#booking">Book Now</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p>📞 +1-800-Well core</p>
+                <p>✉️ info@Well core.com</p>
+                <p>📍 123 Wellness Street, Health City, HC 12345</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Policies & Accessibility</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Accessibility Statement</a></li>
+                    <li><button onclick="toggleFontSize()" class="footer-link-btn">🔤 Adjust Font Size</button></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Well core. All rights reserved. Designed with care for your wellness.</p>
+        </div>
+    </footer>
+
+    <script src="mindcare.js"></script>
+</body>
+</html>
